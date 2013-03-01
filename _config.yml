@@ -1,0 +1,11 @@
+markdown: redcarpet
+pygments: true
+url:  /blog
+permalink: /posts/:title
+
+name: Nathan Landis
+url: http://my8bird.github.com/blog
+description: 
+twitter: my8bird
+github: my8bird
+gravatar_url: http://gravatar.com/avatar/63450cb8099f43abe093651ee120cc01
