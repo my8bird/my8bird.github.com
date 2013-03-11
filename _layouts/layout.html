@@ -1,9 +1,10 @@
-<!DOCTYPE html>
+<!doctype html>
 
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<html lang="en">
 
 <head>
   <meta charset="utf-8">
+
   <title>
     {% if page.title %}
       {{ page.title }} &ndash;
@@ -18,47 +19,53 @@
 
   <link rel="alternate" type="application/rss+xml" href="/atom.xml" />
 
-  <link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
-  <link rel="stylesheet" href="/css/bootstrap-responseive.min.css" type="text/css" rel="stylesheet" />
+  <!-- <link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css" rel="stylesheet" /> -->
+  <link rel="stylesheet" href="/css/theme.css" type="text/css" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/bootstrap-responsive.min.css" type="text/css" rel="stylesheet" />
   <link rel="stylesheet" href="/css/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="/css/site.css" type="text/css" />
 
+  <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
   <script src="javascripts/bootstrap.min.js" ></script>
+  <script src="javascripts/search.js" ></script>
+  <script src="javascripts/site.js" ></script>
 </head>
 
-<body>
-  <div class="navbar" >
+<body style="padding-top: 100px" >
+  <div class="navbar navbar-fixed-top" >
     <div class="navbar-inner" >
-      <div class="brand">{{site.title}}</div>
+      <div class="container" >
+        <div class="brand">
+          <a href="/">
+            {{site.title}}
+          </a>
+        </div>
+        <ul class="nav" >
+          <li class="active" >
+            <a href="/">Posts</a>
+          </li>
+          <li>
+            <a href="https://github.com/{{ site.github }}" target="_blank">
+              <img src="/images/github.png" /> GitHub
+            </a>
+          </li>
+        </ul>
+        <div class="navbar-search pull-right" >
+          <input id="searchbox" type="text" class="search-query" placeholder="Search" />
+        </div>
+      </div>
     </div>
   </div>
-<!--
-  <section class="sidebar">
-    <a href="">
-      <img src="{{ site.gravatar_url }}?s=150" height="75" width="75" class="avatar" />
-    </a>
 
-    <section class="name">
-      <a href="/">
-        {{ site.name }}
-      </a>
-    </section>
+  <header >
+    <div class="container" >
+      <h1>Blog</h1>
+      <p class="lead">Caching my ideas until they are invalidated</p>
+    </div>
+  </header>
 
-    <section class="meta">
-      <a href="https://github.com/{{ site.github }}" target="_blank"><img src="/images/github.png" /></a>
-      <a href="/atom.xml"><img src="/images/rss.png" /></a>
-    </section>
-
-    <section class="sections">
-      <ul>
-        <li><a href="/about.html">about</a></li>
-        <li><a href="">posts</a></li>
-      </ul>
-    </section>
-  </section>
--->
-
-  <div class="container">
-     {{ content }}
+  <div class="container" >
+    {{ content }}
   </div>
 </body>
 
