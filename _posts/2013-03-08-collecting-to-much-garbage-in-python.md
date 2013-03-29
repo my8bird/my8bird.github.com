@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Collecting to much Garbage in Python
+tags: ['python']
 ---
 
 If you think you have leak due to noncollectble objects, ie. those with a `__del__` method, it is simple to verify by looking at the garbage collectors garbage list. This list contains all of objects which python could not automatically release.
